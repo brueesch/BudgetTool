@@ -6,13 +6,54 @@
     android:layout_height="match_parent"
     tools:context="com.brueschgames.budgettool.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/applySpendMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inputSpendMoney"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:onClick="spendMoney"
+            android:text="Add"
+            tools:layout_editor_absoluteX="146dp"
+            tools:layout_editor_absoluteY="273dp" />
+
+        <EditText
+            android:id="@+id/inputSpendMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/remainingMoney"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="89dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="212dp" />
+
+        <TextView
+            android:id="@+id/remainingMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="73dp"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="121dp" />
+
+        <Button
+            android:id="@+id/resetAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/applySpendMoney"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="84dp"
+            android:onClick="resetRemainingMoney"
+            android:text="Reset" />
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

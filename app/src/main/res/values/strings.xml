@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Budget Tool</string>
+    <string name="initial_value">50.0</string>
 </resources>
