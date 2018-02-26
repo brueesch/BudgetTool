@@ -17,7 +17,7 @@
             android:layout_below="@+id/inputSpendMoney"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:onClick="spendMoney"
+            android:onClick="addSpendMoney"
             android:text="Add"
             tools:layout_editor_absoluteX="146dp"
             tools:layout_editor_absoluteY="273dp" />
@@ -41,7 +41,10 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="73dp"
-            android:text="TextView"
+            android:text="50"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="70sp"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="121dp" />
 
@@ -54,6 +57,21 @@
             android:layout_marginTop="84dp"
             android:onClick="resetRemainingMoney"
             android:text="Reset" />
+
+        <ProgressBar
+            android:id="@+id/spendMoneyProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/circle_shape"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="65"
+            android:progressDrawable="@drawable/circular_progress_bar" />
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
