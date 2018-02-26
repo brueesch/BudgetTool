@@ -3,7 +3,9 @@ package com.brueschgames.budgettool;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -22,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String REMAINING_MONEY_FILE_NAME = "remainingMoney";
     private TextView remainingMoney;
     private TextView inputSpendMoney;
-    private File saveFile;
     private ProgressBar spendMoneyProgressBar;
 
     @Override
@@ -33,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         inputSpendMoney = findViewById(R.id.inputSpendMoney);
         spendMoneyProgressBar = findViewById(R.id.spendMoneyProgressBar);
 
+        // Find the toolbar view inside the activity layout
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
+
         try {
             FileInputStream fin = openFileInput(REMAINING_MONEY_FILE_NAME);
             int c;
@@ -42,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             fin.close();
-            String remainingMoneyString = temp.length() == 0?"50":temp.toString();
+            String remainingMoneyString = temp.length() == 0?"@string/initial_value":temp.toString();
             remainingMoney.setText(remainingMoneyString);
 
         } catch (FileNotFoundException e) {
@@ -52,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
         }
         updateProgressBar();
 
+    }
+
+    // Menu icons are inflated just as they were with actionbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     public void addSpendMoney(View view) {
