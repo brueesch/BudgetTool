@@ -48,7 +48,7 @@
             tools:layout_editor_absoluteY="212dp" />
 
         <TextView
-            android:id="@+id/remainingMoney"
+            android:id="@+id/remainingAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
