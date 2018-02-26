@@ -3,6 +3,7 @@ package com.brueschgames.budgettool;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -95,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateProgressBar() {
-        int i = Integer.parseInt(remainingMoney.getText().toString());
-        i *= 2;
-        spendMoneyProgressBar.setProgress(i);
+        Double remaining = Double.parseDouble(remainingMoney.getText().toString());
+        int i = remaining.intValue();
+        spendMoneyProgressBar.setProgress(i*2);
     }
 }
