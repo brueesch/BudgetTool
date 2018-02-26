@@ -23,13 +23,15 @@
 
         <Button
             android:id="@+id/applySpendMoney"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/inputSpendMoney"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="53dp"
+            android:background="@drawable/button_bg_rounded_corners"
             android:onClick="addSpendMoney"
-            android:text="Add"
+            android:text="@string/add"
+            android:textColor="@android:color/white"
             tools:layout_editor_absoluteX="146dp"
             tools:layout_editor_absoluteY="273dp" />
 
@@ -37,10 +39,10 @@
             android:id="@+id/inputSpendMoney"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/remainingMoney"
+            android:layout_below="@+id/spendMoneyProgressBar"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="89dp"
             android:ems="10"
+            android:hint="@string/spend_amount"
             android:inputType="numberDecimal"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="212dp" />
@@ -52,22 +54,12 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="73dp"
-            android:text="50"
+            android:text="@string/initial_value"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="70sp"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="121dp" />
-
-        <Button
-            android:id="@+id/resetAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/applySpendMoney"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="84dp"
-            android:onClick="resetRemainingMoney"
-            android:text="Reset" />
 
         <ProgressBar
             android:id="@+id/spendMoneyProgressBar"
