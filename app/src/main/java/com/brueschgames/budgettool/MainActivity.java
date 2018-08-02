@@ -27,6 +27,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private TextView balance;
+    private TextView amountPerDay;
     private PaymentService paymentService;
     private ListView paymentList;
     private SharedPreferences sharedPreferences;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         balance = findViewById(R.id.balance);
+        amountPerDay = findViewById(R.id.amountPerDay);
         paymentService = PaymentServiceImpl.getInstance();
         paymentList = findViewById(R.id.paymentList);
         sharedPreferences = getPreferences(MODE_PRIVATE);
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         balance.setText(paymentService.getBalance().toString());
+        amountPerDay.setText(paymentService.getAmountPerDay().toString());
         ArrayList<String> listArray = new ArrayList<>();
         for (Payment payment : paymentService.getAllPayments()) {
             listArray.add(payment.getAmount().toString() + "\n" + payment.getDescription() + "\n" + payment.getDate().toString());

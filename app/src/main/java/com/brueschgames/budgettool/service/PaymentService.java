@@ -21,4 +21,6 @@ public interface PaymentService {
     void addPayments(ArrayList<Payment> payments);
 
     void removePayment(int i);
+
+    BigDecimal getAmountPerDay();
 }

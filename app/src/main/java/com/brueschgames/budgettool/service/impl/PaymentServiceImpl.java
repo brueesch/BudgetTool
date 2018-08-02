@@ -4,7 +4,9 @@ import com.brueschgames.budgettool.model.Payment;
 import com.brueschgames.budgettool.service.PaymentService;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 
 public class PaymentServiceImpl implements PaymentService {
@@ -64,6 +66,15 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public void removePayment(int i) {
         payments.remove(i);
+    }
+
+    @Override
+    public BigDecimal getAmountPerDay() {
+        int dayOfMonth = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        int dayEndOfMonth = Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
+        int divider = dayEndOfMonth - dayOfMonth + 1;
+
+        return getBalance().divide(BigDecimal.valueOf(divider), BigDecimal.ROUND_UP);
     }
 
 
