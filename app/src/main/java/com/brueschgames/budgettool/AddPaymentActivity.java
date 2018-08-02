@@ -2,9 +2,8 @@ package com.brueschgames.budgettool;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -15,7 +14,6 @@ import com.brueschgames.budgettool.service.PaymentService;
 import com.brueschgames.budgettool.service.impl.PaymentServiceImpl;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Objects;
 
@@ -57,10 +55,6 @@ public class AddPaymentActivity extends AppCompatActivity {
             paymentService.addPayment(payment);
             finish();
         }
-    }
-
-    public void cancelPayment(View view) {
-        finish();
     }
 
     private void showInfoToast() {
